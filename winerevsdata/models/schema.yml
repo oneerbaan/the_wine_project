@@ -22,4 +22,34 @@ models:
       - name: review_description
         data_tests:
           - not_null
-    
+  - name: lcbo_products_source
+    columns:
+      - name: product_id
+        data_tests:
+           - not_null
+           - unique
+      - name: abv
+        data_tests:
+          - not_null
+      - name: product_name
+        data_tests:
+          - not_null
+          - unique
+      - name: class
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['wine','spirits','beers']
+      - name: price
+        data_tests:
+          - not_null
+      - name: volume
+        data_tests:
+          - not_null
+      - name: country
+        data_tests:
+          - not_null
+      - name: producer
+        data_tests:
+          - not_null
