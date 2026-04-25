@@ -1,0 +1,25 @@
+models:
+  - name: wine_reviews_source
+    columns:
+      - name: product_name
+        data_tests:
+          - not_null
+      - name: points
+        data_tests:
+          - not_null
+      - name: winery
+        data_tests:
+          - not_null
+      - name: country
+        data_tests:
+          - not_null
+      - name: variety
+        data_tests:
+          - not_null
+      - name: region
+        data_tests:
+          - not_null
+      - name: review_description
+        data_tests:
+          - not_null
+    
