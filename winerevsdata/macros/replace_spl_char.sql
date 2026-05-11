@@ -1,5 +1,7 @@
-{% macro remove_spl_char(model,column_name) %}
-SELECT
-    REGEXP_REPLACE({{column_name}}, '^.+,\\s*', '') AS {{column_name}}
-FROM {{model}}
+{% macro replace_spl_char(column_name, data_type) %}
+    REGEXP_REPLACE(
+        {{ convert_data_type(column_name, data_type) }},
+        '^.+,\\s*',
+        ''
+    ) AS {{ column_name }}
 {% endmacro %}
