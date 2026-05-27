@@ -1,28 +1,22 @@
 WITH wines AS (
-
     SELECT *
     FROM {{ ref('dim_lcbo_wines') }}
-
 ),
 
 reviews AS (
-
     SELECT *
     FROM {{ ref('fct_wine_reviews') }}
-
 ),
 
 matched_wineries AS (
 
     SELECT
-
         reviews.product_name,
         reviews.country,
         reviews.region,
         reviews.points,
         reviews.variety,
         reviews.winery,
-
         wines.producer,
 
         JAROWINKLER_SIMILARITY(
@@ -49,7 +43,6 @@ matched_wineries AS (
 )
 
 SELECT
-
     product_name,
     country,
     region,
@@ -66,5 +59,4 @@ SELECT
     variety
 
 FROM matched_wineries
-
 WHERE rn = 1
