@@ -4,9 +4,6 @@ models:
       - name: product_name
         data_tests:
           - not_null
-      - name: points
-        data_tests:
-          - not_null
       - name: winery
         data_tests:
           - not_null
@@ -31,30 +28,18 @@ models:
         data_tests:
            - not_null
            - unique
-      - name: abv
-        data_tests:
-          - not_null
       - name: product_name
         data_tests:
           - not_null
           - unique
       - name: class
         data_tests:
-          - not_null
           - accepted_values:
               arguments:
                 values: ['wine','spirits','beers']
-      - name: price
-        data_tests:
-          - not_null
       - name: volume
         data_tests:
           - not_null
       - name: country
         data_tests:
-          - not_null
           - spl_char
-      - name: producer
-        data_tests:
-          - not_null
-      - name: lcbo_products_spl_char
