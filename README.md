@@ -28,3 +28,8 @@ The project yields a combination of fact and dimension tables:
 
 **Dimension Table** (`dim_lcbo_wines`): Contains descriptive information about wines available in the LCBO inventory such as product id, category, abv, country, producer, product type, price etc. The dimension is filtered to wines only so that unrelated LCBO categories such as spirits, beer and coolers are excluded.
 
+## Matching Products
+
+One major challenge encountered during this project was that the wine review dataset and the LCBO inventory dataset did not share a reliable common product identifier. Exact product-name matching produced very limited results. 
+To investigate whether the datasets could be linked through winery/producer names, fuzzy string matching using **Jaro-Winkler similarity** was explored.
+
