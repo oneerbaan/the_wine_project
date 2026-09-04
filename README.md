@@ -26,4 +26,5 @@ The project yields a combination of fact and dimension tables:
 
 **Fact Table** (`fct_wine_reviews`): Contains measurable and review related information such as review description/content, points, taster name and socials, winery, variety, country etc. A surrogate key is used to uniquely identify fact records.
 
-**Dimension Table** (`dim_lcbo_wines`): 
+**Dimension Table** (`dim_lcbo_wines`): Contains descriptive information about wines available in the LCBO inventory such as product id, category, abv, country, producer, product type, price etc. The dimension is filtered to wines only so that unrelated LCBO categories such as spirits, beer and coolers are excluded.
+
