@@ -38,4 +38,21 @@ To investigate whether the datasets could be linked through winery/producer name
             TRIM(LOWER(wines.producer))
 ) AS similarity_score`
 
+This analysis showed that winery level matching was also relatively limited. Rather than forcing unreliable joins, focus was shifted to attributes that could be studied independently such as winery, country, region, variety and charecteristics.
+
+## dbt
+**dbt** is responsible for transforming raw data hosted in the Snowflake data warehouse into structured analytical models.
+
+The project uses:
+* `ref()` for model dependencies
+* CTE-based transformations
+* Incremental models where appropriate
+* Surrogate keys
+* Data type conversions
+* Deduplication
+* String standardization
+* Window functions
+* **dbt** tests
+* `dbt_utils`
+
 
