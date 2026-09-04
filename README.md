@@ -36,6 +36,6 @@ To investigate whether the datasets could be linked through winery/producer name
 `JAROWINKLER_SIMILARITY(
             TRIM(LOWER(reviews.winery)),
             TRIM(LOWER(wines.producer))
-) AS similarity_score,`
+) AS similarity_score`
 
 
