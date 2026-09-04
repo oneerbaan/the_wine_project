@@ -33,15 +33,9 @@ The project yields a combination of fact and dimension tables:
 One major challenge encountered during this project was that the wine review dataset and the LCBO inventory dataset did not share a reliable common product identifier. Exact product-name matching produced very limited results. 
 To investigate whether the datasets could be linked through winery/producer names, fuzzy string matching using **Jaro-Winkler similarity** was explored. For example:
 
-`
 
-JAROWINKLER_SIMILARITY(
-            
+`JAROWINKLER_SIMILARITY(
             TRIM(LOWER(reviews.winery)),
-            
             TRIM(LOWER(wines.producer))
-            
-        ) AS similarity_score,
-`
-
+        ) AS similarity_score,`
 
