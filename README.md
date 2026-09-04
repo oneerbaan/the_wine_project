@@ -34,17 +34,31 @@ One major challenge encountered during this project was that the wine review dat
 To investigate whether the datasets could be linked through winery/producer names, fuzzy string matching using **Jaro-Winkler similarity** was explored. For example:
 
 
-`JAROWINKLER_SIMILARITY(
+`
+
+
+            JAROWINKLER_SIMILARITY(
+            
             TRIM(LOWER(reviews.winery)),
+            
             TRIM(LOWER(wines.producer))
+            
         ) AS similarity_score,
+        
         ROW_NUMBER() OVER (
+        
             PARTITION BY reviews.winery
+            
             ORDER BY
+            
                 JAROWINKLER_SIMILARITY(
+                
                     TRIM(LOWER(reviews.winery)),
+                    
                     TRIM(LOWER(wines.producer))
+                    
                 ) DESC
+                
         ) AS rn`
 
 
