@@ -20,3 +20,6 @@ The data warehouse in Snowflake follows the Medallion Architecture, separating t
 1. **Bronze Layer:** This contains the raw data ingested from external sources (Google Drive via Airbyte in this case) with minimal transformations. The purpose of this layer is to preserve the original source data and provide a reliable starting point for downstream transformations.
 2. **Silver Layer:** This layer standardises and cleans the raw data. Typical transformations include removing duplicates, standardising text, handling null values, converting data types and handling special characters. This layer mainly focuses on preparing data for analytical modelling.
 3. **Gold Layer:** This layer contains analytics-ready models, namely the fact, dimension and mart tables.
+
+## Data Modelling
+The project yields a combination of fact and dimension tables:
