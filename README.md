@@ -56,4 +56,9 @@ The project uses:
 * `dbt_utils`
 
 
+## Airflow + Astronomer Cosmos
+
+The **dbt** workflow is orchestrated using **Apache Airflow** with **Astronomer Cosmos**. Cosmos converts the dbt project into an Airflow DAG, allowing individual dbt models and their dependencies to be represented in Airflow.
+
+The Airflow environment is containerised using Docker through the Astronomer CLI. dbt is installed in a dedicated virtual environment within the Airflow container, and cosmos is configured to execute that dbt installation.
 
