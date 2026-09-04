@@ -23,3 +23,5 @@ The data warehouse in Snowflake follows the Medallion Architecture, separating t
 
 ## Data Modelling
 The project yields a combination of fact and dimension tables:
+**Fact Table** (`fct_wine_reviews`): Contains measurable and review related information such as review description/content, points, taster name and socials, winery, variety, country etc. A surrogate key is used to uniquely identify fact records.
+**Dimension Table** (`dim_lcbo_wines`): 
